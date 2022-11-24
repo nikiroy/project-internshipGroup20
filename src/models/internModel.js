@@ -4,23 +4,27 @@ const ObjectId=mongoose.Schema.Types.ObjectId;
 const internSchema = new mongoose.Schema({
     name:{
         type:String,
-        required:true
+        required:true,
+        trim:true
     },
     email:{
         type:String,
         reqiured:true,
         unique:true,
+        trim:true
     },
 
    mobile:{
     type:String,
     unique:true,
     required:true,
+    trim:true
 
 },
 collegeId:{
     type:ObjectId,
     ref:"college"
+
 },
 isDeleted:{
     type:Boolean,

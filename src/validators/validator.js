@@ -12,6 +12,7 @@ const stringChecking=function(data){
 const isvalidEmail=/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/
 const isvalidMobile=/^(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}$/
 const isValidName=/^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*/
-const isvalidlogolink=/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/
+const isValidlogolink=/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/
+const isValidAbbrv=/^[.a-zA-Z\s,-]+$/
 
-module.exports={stringChecking,isvalidEmail,isvalidMobile,isValidName,isvalidlogolink}
+module.exports={stringChecking,isvalidEmail,isvalidMobile,isValidName,isValidlogolink,isValidAbbrv}

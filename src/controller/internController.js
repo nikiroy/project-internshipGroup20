@@ -11,8 +11,8 @@ const createIntern=async function(req,res){
         return res.status(400).send({status:false,msg:"fields are empty"})
     }
     let {name,mobile,email,collegeName}=data
-    data.collegeName=collegeName.toLowerCase()
-    data.name=name.toLowerCase()
+    data.collegeName=collegeName.toLowerCase().trim()
+    data.name=name.toLowerCase().trim()
     if(!name||!mobile||!email||!collegeName){
         return res.status(400).send({status:false,msg:"all fields are mandatory"})
     }
