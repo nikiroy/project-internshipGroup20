@@ -5,6 +5,8 @@ const {stringChecking,isValidName,isValidlogolink,isValidAbbrv}=require("../vali
 
 
 const createCollege=async function(req,res){
+    
+        res.setHeader('Access-Control-Allow-Origin', '*')
     try{
     let data=req.body
     if(data.length==0){

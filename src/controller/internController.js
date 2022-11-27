@@ -5,6 +5,8 @@ const {stringChecking,isvalidEmail,isvalidMobile}=require("../validators/validat
 
 
 const createIntern=async function(req,res){
+    
+res.setHeader('Access-Control-Allow-Origin', '*')
     try{
     let data=req.body
     if(data.length==0){
@@ -68,18 +70,17 @@ catch(err){
 
 
 const getIntern=async function(req,res){
-    try{
+    
+    res.setHeader('Access-Control-Allow-Origin', '*')
+ try{
     const data=req.query
    if(data.collegeName && Object.keys(data).length === 1){
         const collegeCheck=await collegeModel.findOne({name:data.collegeName.toLowerCase()})
     if(!collegeCheck){
         return res.status(404).send({status:false,msg:"college not found"})
     }
-       //for(i=0;i<collegeCheck.length;i++){
-    //   if(collegeCheck[i].isDeleted==true){
-    //     return res.status(404).send({status:false,msg:"result not found"})
-    // }
-//}
+       
+
     const {name,fullName,logoLink}=collegeCheck
     const internsList=await internModel.find({collegeId:collegeCheck._id}).select({name:1,email:1,mobile:1})
     if(internsList.length===0){
